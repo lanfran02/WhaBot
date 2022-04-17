@@ -88,7 +88,7 @@ def HandleCommands(ctx):
 			WhaBot.SendMessage(chat=contact["Chat_Name"], message=message)
 
 while __name__ == '__main__':
-	unreads = SendMessage.GetUnreadChats(scrolls=10)
+	unreads = WhaBot.GetUnreadChats(scrolls=10)
 	HandleCommands(ctx=unreads)
 	time.sleep(0.5)
 ```
