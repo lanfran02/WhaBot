@@ -1,1 +1,1 @@
-from WhaBot import WhaBot
+from .WhaBot import WhaBot

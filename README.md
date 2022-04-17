@@ -55,9 +55,12 @@ After installing the framework via pip and downloading the correct chromedriver,
 Here is an example code to create a simple bot!
 
 ```python
-import WhaBot
+from WhaBot import *
 
-WhaBot = WhaBot(reloaded=False)
+WhaBot = WhaBot(
+	driver_location = os.getcwd() + "/drivers/chrome", # The location of your driver
+	stored_session= os.getcwd() + "/wsp_session" # My whatsapp stored session folder
+	)
 
 chat = "Myself" # Change this to a contact from your contact lists! (This also works with phone numbers or groups!)
 
@@ -67,9 +70,12 @@ Once you have that done, here you have an actual bot, with 2 commands!
 
 ```python
 import time
-import WhaBot
+from WhaBot import *
 
-WhaBot = WhaBot(reloaded=False)
+WhaBot = WhaBot(
+	binary_location = '/Applications/Brave Browser.app/Contents/MacOS/Brave Browser', #Since I'm using Brave for the chromedriver
+	driver_location = os.getcwd() + "/chromedriver" # The location of your driver
+	)
 
 def HandleCommands(ctx):
 	for contact in ctx:
@@ -112,6 +118,18 @@ The functions are very self-explained, but here is the list of functions and par
 |ChangeTheme |  `theme:str` | Change the theme to `dark` or `light` | _`boolean`_ |
 |TerminateSession | `sure:str` | Terminate the WhatsApp session | _`boolean`_ |
 |CloseDriver | None | Closes the driver | _`void`_ |
+
+
+To initiate the framework, you can pass a different set of variables:
+| **Variable** | **Type** | **Default** | **Description** |
+|:----------:|:--------:|:-------------:|
+| wait | _int_ | `15` (seconds) | Is the waiting time for different objects, this may vary depending on your internet speed |
+| reloaded | _boolean_ | `False` | If you have already a chromedriver session active, maybe you don't want to reload the WhatsApp page |
+| binary_location | _str_ (PATH) | `None` | The binary location for your chromium based browser. (Tested with Chrome and Brave browser) |
+| port | _int_ | `None` | The port where you have your chromium based browser running. This option is often used for debug purposes | 
+| stored_session | _str_ (PATH) | `None`  * | The path where the Selenium session is stored. * The default path will be in the same folder and the name of the session will be "stored_session"|
+| driver_location | _str_ (PATH) | `None` * | The path where your chromedriver is stored. * The default will be in the same folder as the bot is running with the name "chromedriver" |
+
 
 ## ✍️ Authors <a name = "Authors"></a>
 - [@lanfran02](https://github.com/lanfran02) - Idea & Main developer
