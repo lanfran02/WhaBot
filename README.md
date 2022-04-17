@@ -122,7 +122,7 @@ The functions are very self-explained, but here is the list of functions and par
 
 To initiate the framework, you can pass a different set of variables:
 | **Variable** | **Type** | **Default** | **Description** |
-|:----------:|:--------:|:-------------:|
+|:----------:|:--------:|:--------:|:-------------:|
 | wait | _int_ | `15` (seconds) | Is the waiting time for different objects, this may vary depending on your internet speed |
 | reloaded | _boolean_ | `False` | If you have already a chromedriver session active, maybe you don't want to reload the WhatsApp page |
 | binary_location | _str_ (PATH) | `None` | The binary location for your chromium based browser. (Tested with Chrome and Brave browser) |
